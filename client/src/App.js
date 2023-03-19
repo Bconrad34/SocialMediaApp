@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Login } from "./components/Login";
+import './App.scss';
+import { Header } from './components/Header';
 
 function App() {
   const [backendData, setBackendData] = useState([{}]);
@@ -9,13 +12,8 @@ function App() {
 
   return (
     <div>
-      {(backendData.users === undefined) ?  (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user, i) => {
-          return <p key={i}>{user}</p>
-        })
-      )}
+      <Header />
+      <Login />
     </div>
   );
 }
